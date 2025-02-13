@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Bomb
+  - Floor
   layers:
   - Default
   - TransparentFX

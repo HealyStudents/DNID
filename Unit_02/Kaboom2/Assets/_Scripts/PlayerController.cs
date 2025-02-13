@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.gameObject.CompareTag("Bomb"))
         {
             Destroy(collision.collider.gameObject);
+            GameManager.instance.CatchBomb();
         }
     }
 }
