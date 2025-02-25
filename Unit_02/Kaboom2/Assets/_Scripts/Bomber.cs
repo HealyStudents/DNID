@@ -6,9 +6,11 @@ public class Bomber : MonoBehaviour
     public GameObject bombPrefab;
     private bool movingRight;
     public float bomberSpeed, bombWaitTime;
+    private Animator anim;
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         StartCoroutine(BombCoroutine());
     }
 
@@ -31,6 +33,10 @@ public class Bomber : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(bombWaitTime);
+
+            anim.SetTrigger("Throw");
+
+            yield return new WaitForSeconds(0.4f);
 
             SpawnBomb();
         }
