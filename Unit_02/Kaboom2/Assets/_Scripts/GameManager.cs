@@ -26,6 +26,14 @@ public class GameManager : MonoBehaviour
         scoreText.text = "" + score;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void IncreaseLevel()
     {
         level++;
