@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
         }
         */
 
+        if (GameManager.instance.isPaused) return;
+
         // Mouse position input method  
         float mouseX = gameCamera.ScreenToWorldPoint(Input.mousePosition).x;
         transform.position = new Vector2(mouseX, transform.position.y);

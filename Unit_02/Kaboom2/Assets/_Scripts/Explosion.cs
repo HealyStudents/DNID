@@ -11,6 +11,7 @@ public class Explosion : MonoBehaviour
     IEnumerator DieSoon()
     {
         yield return new WaitForSeconds(0.5f);
+        while (GameManager.instance.isPaused) yield return new WaitForFixedUpdate();
         Destroy(gameObject);
     }
 }

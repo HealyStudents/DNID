@@ -16,6 +16,8 @@ public class Bomber : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (GameManager.instance.isPaused) return;
+
         if (movingRight)
         {
             transform.Translate(Vector3.right * bomberSpeed); // new Vector3(1f, 0f, 0f);
@@ -32,11 +34,16 @@ public class Bomber : MonoBehaviour
     {
         while (true)
         {
+            while (GameManager.instance.isPaused) yield return new WaitForFixedUpdate();
+
             yield return new WaitForSeconds(bombWaitTime);
 
+            while (GameManager.instance.isPaused) yield return new WaitForFixedUpdate();
             anim.SetTrigger("Throw");
 
             yield return new WaitForSeconds(0.4f);
+
+            while (GameManager.instance.isPaused) yield return new WaitForFixedUpdate();
 
             SpawnBomb();
         }

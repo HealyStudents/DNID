@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public Bomber bomber;
     public int level = 1;
 
+    public bool isPaused;
+    public GameObject menu;
+
     private void Awake()
     {
         instance = this;
@@ -30,8 +33,19 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            ShowPauseMenu();
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void ShowPauseMenu()
+    {
+        isPaused = !isPaused;
+        menu.SetActive(isPaused);
     }
 
     public void IncreaseLevel()
