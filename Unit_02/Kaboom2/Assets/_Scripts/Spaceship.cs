@@ -8,11 +8,11 @@ public class Spaceship : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(Vector3.up * speed);
+            transform.Translate(Vector3.up * speed, Space.World);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(-Vector3.up * speed);
+            transform.Translate(-Vector3.up * speed, Space.World);
         }
     }
 }

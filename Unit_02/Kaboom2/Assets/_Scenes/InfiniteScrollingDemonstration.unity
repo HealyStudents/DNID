@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e051a67d21952524ab79a86dedd231fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.1
 --- !u!1 &1440784183
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 48
-  scrollSpeed: 1
+  scrollSpeed: 0.2
 --- !u!1 &1451043356
 GameObject:
   m_ObjectHideFlags: 0
