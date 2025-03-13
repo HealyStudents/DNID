@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,6 +66,13 @@ public class GameManager : MonoBehaviour
     {
         gameOverText.gameObject.SetActive(true);
         player.gameObject.SetActive(false);
+        StartCoroutine(GoBackToStartMenu());
+    }
+
+    private IEnumerator GoBackToStartMenu()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void KillPlayer()
