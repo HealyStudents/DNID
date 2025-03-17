@@ -22,6 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         if (PauseMenu.instance.isPaused) return;
 
+        if (DialogueSystem.instance.DialogueIsActive())
+        {
+            _xVelocity = 0f;
+            return;
+        }
+
         _xVelocity = Input.GetAxis("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
@@ -29,7 +35,7 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
     }
-
+    
     private bool IsGrounded()
     {
         return _grounded;
