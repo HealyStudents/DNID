@@ -3,11 +3,11 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public DialogueSegment segment;
-    public Camera dialogueCam;
+    public GameObject dialogueCam;
 
     private void FixedUpdate()
     {
-        dialogueCam.gameObject.SetActive(DialogueSystem.instance.DialogueIsActive());
+        dialogueCam.SetActive(DialogueSystem.instance.DialogueIsActive());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
