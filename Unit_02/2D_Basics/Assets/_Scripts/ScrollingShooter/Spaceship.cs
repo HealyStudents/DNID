@@ -4,6 +4,16 @@ public class Spaceship : MonoBehaviour
 {
     public float speed;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject newBullet = BulletPooler.instance.GetBullet();
+            newBullet.transform.position = transform.position;
+            newBullet.SetActive(true);
+        }
+    }
+
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.UpArrow))
